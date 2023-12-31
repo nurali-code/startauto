@@ -1,0 +1,61 @@
+.modal
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    z-index: 9999
+    background-color: rgba(#000, 0.6)
+    padding: 0
+    box-sizing: border-box
+    &-content
+        display: block
+
+        position: absolute
+        max-width: 97%
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+
+        iframe
+            max-width: 96vw !important
+            aspect-ratio: 16/9 
+
+
+
+    &__close
+        position: absolute
+        width: 20px
+        height: 20px
+        line-height: 20px
+        background-color: #373F47B2
+        color: white
+        border-radius: 50%
+        font-size: 20px
+        top: 17px
+        right: 24px
+
+    &.is-open
+        display: block
+
+    @media screen and ( max-width: 1170px )
+        &-content
+
+        &-close
+            top: 24px
+            right: 24px
+            line-height: 25px
+            width: 30px
+            height: 30px
+            font-size: 14px
+
+    @media screen and ( max-width: 700px )
+        &-content
+
+        &-close
+            top: 10px
+            right: 16px
+            line-height: 25px
+            font-size: 20px

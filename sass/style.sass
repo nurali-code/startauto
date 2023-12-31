@@ -1,0 +1,191 @@
+@import 'normolize'
+@import 'fonts'
+@import 'elements'
+@import 'header'
+@import 'footer'
+
+.main
+    overflow: hidden
+    min-height: 610px
+    position: relative
+    z-index: 1
+    &::after
+        content: ''
+        display: block
+        width: 100%
+        height: 4px
+        background-color: #706d76
+        position: absolute
+        top: 513px
+        z-index: 1
+        pointer-events: none
+
+    .container
+        position: relative
+        z-index: 1
+        padding: 70px 15px
+
+    h1
+        font-size: 48px
+        line-height: 120%
+        margin: 0 0 35px
+
+    .tag-wrap
+        max-width: 510px
+        gap: 20px 24px
+        justify-content: flex-start
+        margin-bottom: 50px
+
+    &__img
+        position: absolute
+        right: -10%
+        top: 20px
+        width: 60%
+        max-width: 765px
+        z-index: -1
+        pointer-events: none
+
+    .content
+        max-width: 50%
+
+    @media screen and ( max-width: 1500px )
+        &::after
+            top: 483px
+
+        .container
+            padding: 55px 15px
+
+        h1
+            margin-bottom: 30px
+
+        .tag-wrap
+            margin-bottom: 40px
+
+.uss
+    padding-top: 10px
+    background-image: url('../img/bg.png')
+    background-repeat: no-repeat
+    background-position: center right 2%
+    .container
+        position: relative
+        z-index: 1
+        min-height: 800px
+
+    .textline
+        margin-bottom: 100px
+
+    .col
+        max-width: 32%
+
+    .wrap
+        margin: 0 0 0 auto
+        max-width: 70%
+        align-items: flex-start
+
+    &__img
+        position: absolute
+        left: -20px
+        bottom: 0
+        max-height: 70%
+        z-index: -1
+
+    .col
+        font-size: 18px
+
+    .address
+        max-width: 400px
+        padding: 2px 0 2px 33px
+        display: block
+        margin: 0 0 15px 0
+        background-image: url('../img/icon/ic-6.png')
+        background-repeat: no-repeat
+        background-position: top left
+        background-size: auto 24px
+
+.cards
+    h2
+        margin-bottom: 50px
+
+.card
+    width: 24%
+    padding: 30px 50px
+    border-radius: 20px
+    background-color: rgb(252, 251, 249)
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.05)
+    &__heading
+        align-items: flex-end
+        padding-bottom: 5px
+        color: #5c5a5a
+        border-bottom: 1px solid #d2d0d0
+        margin-bottom: 50px
+        img
+            height: 64px
+            object-fit: contain
+            object-position: center bottom
+            width: 100px
+
+    &-wrap
+        justify-content: flex-start
+        gap: 30px 1.33%
+        align-items: stretch
+
+.features
+    background-color: #000
+    color: white
+    padding: 150px 0
+    .wrap
+        align-items: stretch
+        gap: 30px 2.5%
+
+    &-item
+        width: 18%
+
+    &__icon
+        display: block
+        width: 65px
+        height: 65px
+        object-fit: contain
+        margin-bottom: 20px
+
+    &__heading
+        color: #c6c5cb
+        font-size: 15px
+        line-height: 160%
+
+    &__text
+        font-size: 14px
+        line-height: 150%
+
+.sale
+    h2
+        margin-bottom: 65px
+
+    &-item
+        &__icon
+            width: 95px
+            display: block
+            margin: 0 0 64px
+
+        &__heading
+            font-size: 16px
+            margin: 0 0 14px
+
+        &__price
+            font-weight: 900
+            font-size: 28px
+            margin: 0 0 14px
+            background: linear-gradient(90deg, #ff1404 10%, rgba(155,53,193,1) 40%)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+
+        &__text
+            font-size: 16px
+            font-weight: 600
+            opacity: .45
+            margin-bottom: 50px
+
+    .video
+        width: 50%
+        video 
+            display: block
+            width: 100%

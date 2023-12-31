@@ -1,0 +1,56 @@
+.header
+    background-color: #f5f5f5
+    .container
+        flex-wrap: wrap
+        padding-top: 24px
+        padding-bottom: 24px
+    .container,
+    &-win,
+    &-nav
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &-nav
+        width: 100%
+        background: rgb(252,152,157)
+        justify-content: center
+        background: linear-gradient(90deg, rgba(252,152,157,1) 0%, rgba(155,53,193,1) 100%)
+        a
+            display: block
+            color: white
+            padding: 20px 17px
+            font-size: 16px
+            font-weight: 600
+
+        .active a
+            pointer-events: none
+            color: #f3f367
+
+    &__phone 
+        font-size: 24px
+        font-weight: 600
+        padding: 6px 0
+    &__email
+        font-size: 16px
+        color: #408cfc
+        font-weight: 600
+
+    .logo
+        max-width: 114px
+
+    &-win
+        gap: 25px
+        font-size: 16px
+        line-height: 140%
+        img
+            width: 74px
+
+    &-contact
+        a
+            display: block
+
+    @media screen and ( max-width: 1500px )
+        &-nav 
+            a 
+                font-size: 14px
