@@ -83,7 +83,7 @@
 
     .wrap
         margin: 0 0 0 auto
-        max-width: 70%
+        max-width: 74%
         align-items: flex-start
 
     &__img
@@ -95,16 +95,6 @@
 
     .col
         font-size: 18px
-
-    .address
-        max-width: 400px
-        padding: 2px 0 2px 33px
-        display: block
-        margin: 0 0 15px 0
-        background-image: url('../img/icon/ic-6.png')
-        background-repeat: no-repeat
-        background-position: top left
-        background-size: auto 24px
 
 .cards
     h2
@@ -123,10 +113,11 @@
         border-bottom: 1px solid #d2d0d0
         margin-bottom: 50px
         img
+            width: 100px
             height: 64px
+            max-width: 42%
             object-fit: contain
             object-position: center bottom
-            width: 100px
 
     &-wrap
         justify-content: flex-start
@@ -210,8 +201,29 @@
         width: 49%
 
 @media screen and ( max-width: 1500px )
-    .uss,
-    .cards,
+    .uss
+        .wrap
+            max-width: 76%
+
+        .container
+            min-height: 700px
+
+        .textline
+            margin-bottom: 70px
+
+        .col
+            font-size: 16px
+
+        &__img
+            max-height: 64%
+
+    .card
+        padding: 30px 34px 40px
+        &__heading 
+            margin-bottom: 40px
+        
+    .cards
+
     .features,
     .sale,
     .license,
@@ -257,13 +269,50 @@
             margin-bottom: 50px
             max-width: 100%
 
+    .uss
+
+@media screen and ( max-width: 1000px )
+    .uss
+        &__img
+            position: static
+            width: 500px
+            max-width: 100%
+            margin: 0 auto 30px
+
+        .wrap
+            max-width: 100%
+
+        .textline
+            margin-bottom: 40px
+
+        .col
+            font-size: 14px
+
+@media screen and ( max-width: 700px )
+    .uss
+        .wrap
+            display: block
+
+        .col
+            width: 100%
+            max-width: 100%
+            margin-bottom: 30px
+            &:last-child
+                margin-bottom: 0
+
 @media screen and ( max-width: 600px )
     .main
         h1
             font-size: 34px
+
         .container
             flex-wrap: wrap
             padding-top: 10px
+            padding-bottom: 100px
+
+        .text-wrap
+            margin: 0
+
         &__img
             position: relative
             order: 1
