@@ -161,6 +161,13 @@ ol
     background-color: #fcc80c
     border-radius: 50%
     color: white
+    text-align: center
+    img
+        display: block
+        margin: 10% auto 0
+        width: 80%
+        height: 80%
+        object-fit: contain
     &:hover
         opacity: 1
         box-shadow: 0 0 15px 7px rgba(0, 0, 0, .05)
@@ -171,7 +178,9 @@ ol
     &-wrap
         gap: 20px 17px
         justify-content: flex-start
+
     &__tag
+        text-align: center
         font-size: 16px
         padding: 9px 22px
         font-weight: bold
@@ -216,3 +225,11 @@ ol
 @media screen and ( max-width: 1500px )
     .container
         max-width: 1200px
+
+@media screen and ( max-width: 1200px )
+    .text
+        &__tag
+            font-size: 14px
+
+// @media screen and ( max-width: 700px )
+   
