@@ -7,11 +7,9 @@
             text-decoration: underline
 
     &-text
-        padding: 64px 0 47px
+        padding: 64px 0
         background: #1455b1
         text-align: center
-        font-size: 16px
-        line-height: 25px
         color: #6db2ef
         a
             font-weight: 600
@@ -20,11 +18,17 @@
             &:hover
                 text-decoration: none
 
+        p
+            font-size: 16px
+            line-height: 170%
+
     .container
         max-width: 1240px
 
-    ul
+    .col
+        max-width: 20%
         a
+            display: block
             padding: 2px 0
 
     .wrap
@@ -40,3 +44,28 @@
         border-top: 1px solid #000
         a
             color: #1576fb
+
+    @media screen and ( max-width: 1000px )
+        .wrap
+            justify-content: flex-start
+            gap: 30px 2%
+
+        .col
+            width: 32%
+            max-width: unset
+
+        &-text p
+            text-align: left
+            font-size: 14px
+
+        &-bottom
+            margin-top: 10px
+
+    @media screen and ( max-width: 700px )
+        .col
+            width: 59%
+            &:nth-child(2n+2)
+                width: 39%
+
+            a 
+                padding: 4px 0

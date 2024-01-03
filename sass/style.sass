@@ -67,9 +67,23 @@
 
 .uss
     padding-top: 10px
-    background-image: url('../img/bg.png')
-    background-repeat: no-repeat
-    background-position: center right 2%
+    position: relative
+    z-index: 1
+    &::before
+        content: ''
+        display: block
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        background-image: url('../img/bg.png')
+        background-repeat: no-repeat
+        background-position: center right 2%
+    h2
+        margin-bottom: 12px
+
     .container
         position: relative
         z-index: 1
@@ -95,10 +109,6 @@
 
     .col
         font-size: 18px
-
-.cards
-    h2
-        margin-bottom: 50px
 
 .card
     width: 24%
@@ -128,9 +138,9 @@
     background-color: #000
     color: white
     padding: 150px 0
-    .wrap
+    &-wrap
         align-items: stretch
-        gap: 30px 2.5%
+        gap: 40px 2.5%
 
     &-item
         width: 18%
@@ -151,10 +161,30 @@
         font-size: 14px
         line-height: 150%
 
+    @media screen and ( max-width: 1500px )
+        &-wrap
+            justify-content: flex-start
+            gap: 30px 2%
+
+        &-item
+            width: 32%
+
+    @media screen and ( max-width: 900px )
+        padding: 100px 0
+        &-item
+            width: 49%
+
+    @media screen and ( max-width: 600px )
+        &-wrap
+            gap: 30px 0
+
+        &-item
+            width: 100%
+
 .sale
     background-color: #fff
     h2
-        margin-bottom: 65px
+        margin-bottom: 50px
 
     &-item
         &__icon
@@ -219,16 +249,10 @@
 
     .card
         padding: 30px 34px 40px
-        &__heading 
+        &__heading
             margin-bottom: 40px
-        
-    .cards
 
-    .features,
-    .sale,
-    .license,
-    .footer
-        display: none
+    .cards
 
 @media screen and ( max-width: 1200px )
     .main
@@ -269,14 +293,19 @@
             margin-bottom: 50px
             max-width: 100%
 
-    .uss
+    .card
+        width: 32%
 
 @media screen and ( max-width: 1000px )
     .uss
+        &::before
+            opacity: .5
+            background-position: center left
+            
         &__img
             position: static
             width: 500px
-            max-width: 100%
+            max-width: 80%
             margin: 0 auto 30px
 
         .wrap
@@ -288,7 +317,43 @@
         .col
             font-size: 14px
 
+    .card
+        width: 49%
+
+    .sale
+        padding: 100px 0
+        h2
+            margin-bottom: 50px
+
+        .wrap
+            justify-content: space-evenly
+            gap: 50px 0
+
+        &-item
+            width: unset
+            // margin: 0 auto 
+            order: 2
+
+        .video
+            order: 1
+            width: 100%
+
+    .license
+        h3
+            margin-bottom: 40px
+            font-size: 24px
+
+        img
+            width: 100%
+
+        &__icon
+            display: none
+
 @media screen and ( max-width: 700px )
+    .main
+        .tag-wrap
+            gap: 15px
+
     .uss
         .wrap
             display: block
@@ -299,6 +364,36 @@
             margin-bottom: 30px
             &:last-child
                 margin-bottom: 0
+
+    .card
+        width: 100%
+
+    .license
+        h3
+            margin-bottom: 40px
+            font-size: 22px
+
+    .sale
+        h2
+            margin-bottom: 34px
+        .wrap
+            justify-content: space-around
+
+        &-item
+            &__icon
+                height: 121px
+                object-fit: contain
+                object-position: left bottom
+                margin-bottom: 30px
+
+            &__heading,
+            &__price
+                margin-bottom: 8px
+            &__heading,
+            &__text
+                font-size: 12px
+            &__text
+                margin-bottom: 30px
 
 @media screen and ( max-width: 600px )
     .main
@@ -313,18 +408,25 @@
         .text-wrap
             margin: 0
 
+        .text-wrap,
+        .tag-wrap
+            justify-content: center
+
         &__img
             position: relative
             order: 1
             width: 100%
+            max-width: 310px
+            margin: 0 auto
             img
                 transform: scale(1.1)
 
             &::after
                 bottom: 13%
-                opacity: .5
+                opacity: .2
 
         &-content
+            text-align: center
             width: 100%
             width: 100%
             order: 2
