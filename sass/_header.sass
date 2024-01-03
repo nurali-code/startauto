@@ -15,13 +15,35 @@
         width: 100%
         background: rgb(252,152,157)
         justify-content: center
-        background: linear-gradient(90deg, rgba(252,152,157,1) 0%, rgba(155,53,193,1) 100%)
+        background: linear-gradient(90deg, #fc989d 0%, #9b35c1 100%)
         a
             display: block
             color: white
             padding: 20px 17px
             font-size: 16px
             font-weight: 600
+            @media screen and ( min-width: 1200px )
+                position: relative
+                z-index: 1
+                &::after
+                    transition: all ease .4s
+                    content: ''
+                    display: block
+                    width: calc( 100% - 30px )
+                    height: 1px
+                    left: 15px
+                    position: absolute
+                    bottom: 12px
+                    background-color: #fff
+                    transform: scaleX(0)
+                    transform-origin: 0 0
+
+                &:hover
+                    opacity: 1
+                    &::after
+                        transform: scaleX(1)
+                
+
 
         .active a
             pointer-events: none
@@ -56,67 +78,77 @@
                 font-size: 14px
                 padding: 20px 11px
 
-        &-win 
+        &-win
             max-width: 315px
-
 
     @media screen and ( max-width: 1200px )
         &__text
             display: none
-        
-        &-nav
-            display: none
 
-        .btn
-            &-menu
+        &-nav
+            position: fixed
+            top: 0
+            right: 0
+            width: 320px
+            max-width: 90%
+            height: 100vh
+            z-index: 9999
+            display: block
+            padding-top: 100px
+            transition: all cubic-bezier(0.22, 0.61, 0.36, 1) .5s
+            opacity: 1
+            visibility: hidden
+            transform: translateX(100%)
+            a
+                padding: 10px 30px
+
+            &.active
+                opacity: 1
+                visibility: visible
+                transform: translateX(0)
+
+        .btn-menu
+            position: relative
+            z-index: 99999
+            display: inline-block
+            width: 70px
+            height: 70px
+            background: #9b35c1
+            span
+                width: 45px
+                display: block
+                height: 2px
+                margin: 0 auto
+                border-radius: 1px
+                background-color: #fff
                 position: relative
-                z-index: 99999
-                display: inline-block
-                width: 70px
-                height: 70px
-                background: rgba(252,152,157,1)
-                span
-                    width: 45px
+                transition: all cubic-bezier(0.22, 0.61, 0.36, 1) .4s
+                pointer-events: none
+                &::before,
+                &::after
+                    width: 100%
+                    border-radius: 1px
+                    content: ''
                     display: block
                     height: 2px
-                    margin: 0 auto
-                    border-radius: 1px
                     background-color: #fff
-                    position: relative
-                    transition: all ease .3s
-                    pointer-events: none
-                    &::before,
-                    &::after
-                        width: 100%
-                        border-radius: 1px
-                        content: ''
-                        display: block
-                        height: 2px
-                        background-color: #fff
-                        position: absolute
-                        transition: all ease .3s
-                        top: -13px
-                    &::after
-                        top: 13px
+                    position: absolute
+                    transition: all cubic-bezier(0.22, 0.61, 0.36, 1) .4s
+                    top: -13px
+                &::after
+                    top: 13px
 
-                &.active
-                    span
-                        opacity: 1
-                        background-color: transparent
-                        &::before
-                            top: 0
-                            transform: rotate(45deg)
-                            width: 25px
-                        &::after
-                            top: 0
-                            width: 25px
-                            left: 0
-                            transform: rotate(-45deg)
-
-                    @media screen and ( min-width: 880px ) and ( max-width: 1100px )
-                        position: fixed
-                        top: 4px
-                        left: 8px
+            &.active span
+                opacity: 1
+                background-color: transparent
+                &::before
+                    top: 0
+                    left: 0
+                    transform: rotate(45deg)
+                &::after
+                    top: 0
+                    left: 0
+                    transform: rotate(-45deg)
 
     @media screen and ( max-width: 900px )
         &-win
