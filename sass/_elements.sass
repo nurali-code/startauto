@@ -14,9 +14,10 @@ body
     color: #000
     background-color: #f2f0ed
     font-family: 'Montserrat', sans-serif
-    scroll-behavior: smooth
     position: relative
     z-index: 1
+    display: flex
+    flex-direction: column
 
     &.active
         overflow: hidden
@@ -232,6 +233,50 @@ ol
     background-repeat: no-repeat
     background-position: top left
     background-size: auto 24px
+
+.breadcrumbs
+    background-color: #fff
+    .wrap
+        justify-content: flex-start
+
+    li
+        padding: 25px 0
+        font-size: 14px
+        a
+            color: rgba(0, 0, 0, .5)
+            &:hover
+                text-decoration: underline
+        &::after
+            content: '>'
+            font-weight: 500
+            display: inline-block
+            // vertical-align: middle
+            margin: 0 8px
+        &:last-of-type
+            pointer-events: none
+            a
+                font-weight: 500
+                color: rgba(0, 0, 0, 1)
+            &::after
+                display: none
+
+[class^="icon-"]
+                display: inline-block
+                position: relative
+                font-family: "Open Sans", sans-serif
+                margin: 0 2px 5px 0
+                width: 16px
+                background-image: url(/img/sprite.png)
+                height: 12px
+
+.icon
+    &-subway-grey
+        background-position: -281px -303px
+        vertical-align: middle !important
+    &-subway-red
+        background-position: -297px -303px
+    &-subway-green
+        background-position: -265px -303px
 
 @media screen and ( max-width: 1500px )
     .container

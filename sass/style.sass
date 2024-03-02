@@ -230,6 +230,82 @@
     img
         width: 49%
 
+.schedule
+    padding: 40px 0
+    background-color: #fff
+    &__img
+        width: 300px
+        display: block
+        margin: 0 auto 40px
+
+    &__heading
+        margin-bottom: 5px
+
+    .textline
+        max-width: 100%
+        margin-bottom: 30px
+
+    table
+        color: #060c27
+        width: 100%
+
+        tr
+            border-bottom: 2px solid #d1d1d1
+
+        th
+            font-weight: 600
+            font-size: 12px
+            text-transform: uppercase
+            color: #757077
+            text-align: left
+            padding: 26px 12px 20px
+            &:first-of-type
+                padding-left: 0
+            &:last-of-type
+                text-align: right
+
+        td
+            font-size: 14px
+            padding: 29px 12px
+            vertical-align: top
+            line-height: 30px
+            line-height: 150%
+            &:first-of-type
+                padding-left: 0
+            &:last-of-type
+                text-align: right
+
+        .date
+            font-weight: bold
+            width: 19%
+
+        .subway
+            width: 100%
+            font-weight: 700
+
+        .street
+            display: block
+            margin-top: 3px
+            color: #757077
+
+        a
+            display: block
+            color: #1576fb
+
+        .number
+            text-align: center
+            min-width: 26px
+            font-weight: 700
+            padding: 2px 5px
+            background: #f8e03a
+            padding: 3px 5px
+
+        .addres
+            width: 35%
+
+        .teacher
+            width: 25%
+
 @media screen and ( max-width: 1500px )
     .uss
         .wrap
@@ -348,6 +424,29 @@
 
         &__icon
             display: none
+
+    .schedule
+        table
+            th 
+                display: none
+            tr
+                display: flex
+                flex-wrap: wrap
+                padding: 30px 0
+                justify-content: space-between
+                &:first-of-type
+                    display: none
+            td
+                width: 100% !important
+                order: 3
+                padding: 0
+                &:first-of-type
+                    order: 1
+                    width: unset !important
+                &:last-of-type
+                    order: 2
+                    width: unset !important
+                    text-align: left
 
 @media screen and ( max-width: 700px )
     .main
