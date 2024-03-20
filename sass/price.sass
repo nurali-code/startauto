@@ -1,0 +1,173 @@
+@font-face
+   font-family: 'Unbouded'
+   font-style: normal
+   font-weight: 800
+   src: url('../fonts/Unbounded-ExtraBold.ttf') format('truetype')
+   font-display: swap
+
+.cr
+    &_a
+        color: #fcc80c
+    &_b
+        color: #a8d7ab
+    &_c
+        color: #0077ff
+    &_cd
+        color: #fb4215
+
+.breadcrumbs
+    padding: 18px 0
+    li 
+        padding: 4px 0
+
+.price
+    padding-bottom: 100px
+    &-share
+        border-radius: 20px
+        background-color: #fcfbf9
+        padding: 20px 30px 20px 280px
+        box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, .05)
+        margin: 30px 0 20px
+        position: relative
+        z-index: 1
+        &__img
+            width: 210px
+            display: block
+            aspect-ratio: 1/1
+            object-fit: contain
+
+            position: absolute
+            top: 50%
+            left: 30px
+            max-height: 80%
+            transform: translateY(-50%)
+
+        .title
+            width: 100%
+            // max-width: 70%
+
+        &__heading
+            background-color: #a8d7ab
+            padding: 10px
+            border-radius: 10px
+            margin-bottom: 10px
+
+        a
+            color: #408cfc
+            &:hover
+                text-decoration: underline
+
+    &-item
+        border-bottom: 1px solid #fff
+        padding-bottom: 40px
+        display: flex
+        align-items: center
+        padding: 40px 0
+        &:last-child
+            border: none
+
+    &-header
+        position: relative
+        z-index: 1
+        text-align: center
+
+    &__name
+        display: block
+        margin-top: 10px
+
+    &__img
+        position: absolute
+        left: 75px
+        top: 0
+        height: 100px
+        width: 100px
+        object-fit: contain
+        opacity: .5
+        object-position: center center
+
+    &__heading
+        font-size: 30px
+        margin: 0 0 20px
+
+    &__cat
+        display: inline-block
+        text-transform: uppercase
+        text-align: center
+        width: 250px
+        white-space: pre-wrap
+        min-height: 100px
+        line-height: 100px
+        font-family: "Unbouded", sans-serif
+        font-size: 110px
+        &.--sm
+            font-size: 70px
+            min-height: 70px
+            line-height: 70px
+
+    &-content
+        width: 100%
+        padding-left: 30px
+
+    &-list
+        display: flex
+        justify-content: space-between
+        background-color: #fff
+        padding: 10px
+        border-radius: 6px
+        b
+            display: block
+            margin-top: 4px
+
+        li
+            width: 33.33%
+            padding: 10px
+
+    @media screen and ( max-width: 1000px )
+        &-item
+            position: relative
+            z-index: 1
+            display: block
+
+        &-header
+            max-width: 250px
+            margin-bottom: 40px
+
+        &__name
+
+        &__heading
+            @media screen and ( min-width: 700px ) 
+                position: absolute
+                top: 40px
+                right: 0
+                height: 130px
+                max-width: calc( 100% - 280px )
+                margin: 0
+                display: flex
+                align-items: center
+
+        &-content
+            padding-left: 0
+
+    @media screen and ( max-width: 700px )
+        &-share
+            padding: 20px
+            &__img
+                width: 100%
+                height: 200px
+                position: static
+                margin: 0 0 10px
+                transform: none
+
+        &-header 
+            display: none
+
+        &__heading 
+            font-size: 24px
+            margin-bottom: 10px
+        &-item
+            padding: 20px 0
+        &-list 
+            display: block
+            li 
+                width: 100%
+
